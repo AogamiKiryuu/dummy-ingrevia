@@ -1,0 +1,11 @@
+runtime: python39  # Menentukan versi Python yang digunakan
+
+env_variables:
+  MODEL_PATH: "gs:gs://dummy-capstone/siamese_model.h5"  # Path model yang di-upload ke Cloud Storage
+
+handlers:
+- url: /static
+  static_dir: static/
+
+- url: /.*  # Menangani semua request ke API
+  script: auto
